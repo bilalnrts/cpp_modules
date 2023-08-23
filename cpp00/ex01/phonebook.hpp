@@ -2,16 +2,20 @@
 # define PHONEBOOK_HPP
 
 # include <iostream>
+# include "contact.hpp"
 
 class PhoneBook {
 	private:
-		//Contact	_contacts[8]; -> This class will be created later
+		Contact		_contacts[8];
 		int			_size;
+		int			_moment;
+		std::string	get_input(std::string str);
 
 	public:
 		void		add();
-		void		search();
+		void		search(int id);
 		void		display();
+		int			get_size() const;
 		PhoneBook(void);
 };
 
