@@ -31,27 +31,67 @@ void	copy_content(std::string *fileContent, std::string filename)
 	myFile.close();
 }
 
+void	create_copy_file(std::string *fileContent, std::string filename)
+{
+	std::string		fileName = filename.substr(0, filename.find("."));
+	std::ofstream	outfile(fileName + "_copy.txt");
+	int				i;
+
+	i = 0;
+	while (fileContent[i][0] != '\0')
+	{
+		outfile << fileContent[i] << std::endl;
+		i++;
+	}
+	outfile.close();
+}
+
+void	replace(std::string *fileContent, std::string filename, std::string s1, std::string s2)
+{
+	std::ofstream	myFile(filename);
+	int				i;
+
+	i = 0;
+	while (fileContent[i][0] != '\0')
+	{
+		std::cout << fileContent[i] << std::endl;
+		if (fileContent[i] == s1)
+			myFile << s2 << std::endl;
+		else
+			myFile << fileContent[i] << std::endl;
+		i++;
+	}
+	myFile.close();
+}
+
+bool	is_file_exist(std::string filaname)
+{
+	std::ifstream infile(filaname);
+	return (infile.good());
+}
+
 int	main(int ac, char **av)
 {
 	if (ac == 4)
 	{
-		std::string filename = av[1];
+		std::string fileName = av[1];
+		if (!is_file_exist(fileName))
+		{
+			std::cout << "Error !\nThere is no file named " << fileName << std::endl;
+			return (0);
+		}
 		std::string	s1 = av[2];
 		std::string	s2 = av[3];
-		int rowCount = row_count(filename);
+		int rowCount = row_count(fileName);
 		if (rowCount > 0)
 		{
 			std::string	fileContent[rowCount + 1];
-			std::string str;
-			copy_content(fileContent, filename);
-			int i = 0;
-			while (i < rowCount)
-			{
-				std::cout << fileContent[i] << std::endl;
-				i++;
-			}
+			copy_content(fileContent, fileName);
+			create_copy_file(fileContent, fileName);
+			replace(fileContent, fileName, s1, s2);
 		}
 	}
-	//system("leaks a.out");
+	else
+		std::cout << "Error !\nWrong number of arguments ! <filaname> <s1> <s2>" << std::endl;
 	return (0);
 }
