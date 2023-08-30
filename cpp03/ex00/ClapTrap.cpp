@@ -2,6 +2,7 @@
 
 ClapTrap::ClapTrap() : _name("Default"), _hitPoints(10), _energy(10), _attackDamage(0)
 {
+	std::cout << "(Default Cons) ClapTrap Default was just born !" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energy(10), _attackDamage(0)
