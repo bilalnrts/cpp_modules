@@ -1,4 +1,4 @@
-NAME		= claptrap
+NAME		= scavtrap
 CC	 		= g++
 CPPFLAGS	= -Wall -Wextra -Werror -g -std=c++98
 SOURCE		= main.cpp ClapTrap.cpp ScavTrap.cpp
