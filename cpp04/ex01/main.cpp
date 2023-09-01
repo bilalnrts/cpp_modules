@@ -30,6 +30,5 @@ int main()
 		delete animalArray[i];
 		i++;
 	}
-	system("leaks animal");
 	return 0;
 }
