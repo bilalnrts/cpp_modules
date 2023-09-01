@@ -33,8 +33,8 @@ Cat &Cat::operator=(const Cat &another)
 
 Cat::~Cat()
 {
-	delete this -> _catBrain;
-	std::cout <<  "Cat " << this -> _type << " just disappeared !" << std::endl;
+	delete _catBrain;
+	std::cout <<  "(Cat) " << this -> _type << " just disappeared !" << std::endl;
 }
 
 void	Cat::makeSound() const

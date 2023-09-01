@@ -4,7 +4,7 @@
 
 int main()
 {
-	const Animal *animalArray[10];
+	Animal *animalArray[10];
 
 	int	i = 0;
 	while (i < 10)

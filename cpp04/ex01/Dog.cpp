@@ -33,7 +33,7 @@ Dog &Dog::operator=(const Dog &another)
 
 Dog::~Dog()
 {
-	std::cout << "Dog " << this -> _type << " just disappeared !" << std::endl;
+	std::cout << "(Dog) " << this -> _type << " just disappeared !" << std::endl;
 	delete this -> _dogBrain;
 }
 
