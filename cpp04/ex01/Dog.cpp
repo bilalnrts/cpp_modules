@@ -16,14 +16,18 @@ Dog::Dog(std::string type)
 
 Dog::Dog(Dog &another)
 {
-	*this = another;
+	this -> _dogBrain = new Brain(*another._dogBrain);
 	std::cout << "(Dog) Copy constructor called !" << std::endl;
 }
 
 Dog &Dog::operator=(const Dog &another)
 {
 	if (this != &another)
+	{
 		this -> _type = another._type;
+		delete this -> _dogBrain;
+		this -> _dogBrain = new Brain(*another._dogBrain);
+	}
 	return (*this);
 }
 
@@ -36,4 +40,9 @@ Dog::~Dog()
 void	Dog::makeSound() const
 {
 	std::cout << "Hav!" << std::endl;
+}
+
+Brain &Dog::getBrain() const
+{
+	return (*_dogBrain);
 }

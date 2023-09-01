@@ -14,26 +14,35 @@ Cat::Cat(std::string type)
 	std::cout << "Cat \"" << type << "\" suddenly appeared !" << std::endl;
 }
 
-Cat::Cat(Cat &another)
+Cat::Cat(const Cat &another)
 {
-	*this = another;
+	this -> _catBrain = new Brain(*another._catBrain);
 	std::cout << "(Cat) Copy constructor called ! " << std::endl;
 }
 
 Cat &Cat::operator=(const Cat &another)
 {
-	if (this == &another)
+	if (this != &another)
+	{
 		this -> _type = another._type;
+		delete this -> _catBrain;
+		this -> _catBrain = new Brain(*another._catBrain);
+	}
 	return (*this);
 }
 
 Cat::~Cat()
 {
-	std::cout <<  "Cat " << this -> _type << " just disappeared !" << std::endl;
 	delete this -> _catBrain;
+	std::cout <<  "Cat " << this -> _type << " just disappeared !" << std::endl;
 }
 
 void	Cat::makeSound() const
 {
 	std::cout << "Meow!" << std::endl;
+}
+
+Brain &Cat::getBrain() const
+{
+	return (*_catBrain);
 }

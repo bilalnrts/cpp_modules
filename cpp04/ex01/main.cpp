@@ -1,25 +1,35 @@
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 
 int main()
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	const WrongAnimal *k = new WrongCat();
+	const Animal *animalArray[10];
 
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
-	std::cout << "-------------" << std::endl;
-	k->makeSound();
-	delete meta;
-	delete j;
-	delete i;
+	int	i = 0;
+	while (i < 10)
+	{
+		if (i < 5)
+			animalArray[i] = new Cat();
+		else
+			animalArray[i] = new Dog();
+		i++;
+	}
+	std::cout << std::endl;
+	Cat cat(*(Cat *)animalArray[0]);
+	std::cout <<cat.getBrain().getIdea(3) << std::endl;
+	Dog dog(*(Dog *)animalArray[6]);
+	std::cout << dog.getBrain().getIdea(1) << std::endl;
+	cat.makeSound();
+	dog.makeSound();
+	animalArray[3]->makeSound();
+	animalArray[8]->makeSound();
+	i = 0;
+	while (i < 10)
+	{
+		delete animalArray[i];
+		i++;
+	}
+	system("leaks animal");
 	return 0;
 }

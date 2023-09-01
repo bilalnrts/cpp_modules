@@ -1,7 +1,7 @@
 NAME		= animal
 CC	 		= g++
 CPPFLAGS	= -Wall -Wextra -Werror -g -std=c++98
-SOURCE		= main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
+SOURCE		= main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
 OBJS		= $(SOURCE:.cpp=.o)
 RM			= rm -rf
 
