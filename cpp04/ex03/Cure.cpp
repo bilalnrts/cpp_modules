@@ -8,6 +8,11 @@ Cure::Cure(const Cure &another) : AMateria(another)
 {
 }
 
+Cure::~Cure()
+{
+	std::cout << "Cure destructor called !" << std::endl;
+}
+
 AMateria *Cure::clone() const
 {
 	return (new Cure(*this));

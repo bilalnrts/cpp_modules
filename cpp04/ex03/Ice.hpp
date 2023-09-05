@@ -8,8 +8,9 @@ class Ice : public AMateria
 	public :
 		Ice();
 		Ice(const Ice &another);
+		~Ice();
 		AMateria *clone() const;
-		void	use(ICharacter &targer);
+		void	use(ICharacter &target);
 };
 
 #endif
