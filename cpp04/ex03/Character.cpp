@@ -31,14 +31,6 @@ std::string const &Character::getName() const
 	return (this -> _name);
 }
 
-void	Character::listMat()
-{
-	std::cout << "0 : " << this -> _inventory[0]->getType() << std::endl;
-	std::cout << "1 : " << this -> _inventory[1]->getType() << std::endl;
-	std::cout << "2 : " << this -> _inventory[2]->getType() << std::endl;
-	std::cout << "3 : " << this -> _inventory[3]->getType() << std::endl;
-}
-
 void	Character::equip(AMateria *m)
 {
 	if (this -> _size == 4 || !m)
