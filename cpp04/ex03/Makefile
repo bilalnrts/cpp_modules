@@ -1,7 +1,7 @@
 NAME		= game
 CC	 		= g++
 CPPFLAGS	= -Wall -Wextra -Werror -g -std=c++98
-SOURCE		= main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp
+SOURCE		= main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 OBJS		= $(SOURCE:.cpp=.o)
 RM			= rm -rf
 
