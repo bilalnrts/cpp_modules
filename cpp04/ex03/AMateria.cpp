@@ -2,12 +2,10 @@
 
 AMateria::AMateria(std::string const & type) : _type(type)
 {
-	return ;
 }
 
 AMateria::AMateria(const AMateria &another) : _type(another._type)
 {
-	return ;
 }
 
 AMateria::~AMateria()

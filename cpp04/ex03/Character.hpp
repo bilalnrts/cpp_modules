@@ -7,11 +7,9 @@
 class Character : public ICharacter
 {
 	protected :
-		std::string const	_name;
+		std::string			_name;
 		AMateria			*_inventory[4];
 		int					_size;
-		int					_trashSize;
-		AMateria			**_trash;
 
 	public :
 		Character(std::string name);
@@ -22,7 +20,6 @@ class Character : public ICharacter
 		void	equip(AMateria *m);
 		void	unequip(int idx);
 		void	use(int idx, ICharacter &target);
-		void	addTrash(AMateria *m);
 };
 
 #endif
