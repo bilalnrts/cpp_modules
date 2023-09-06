@@ -7,7 +7,7 @@
 class Bureaucrat
 {
 	protected :
-		std::string const	_name; //must be const
+		std::string const	_name;
 		int					_grade;
 	public :
 		Bureaucrat(std::string name, int grade);
