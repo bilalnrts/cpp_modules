@@ -40,6 +40,11 @@ Brain::Brain(Brain &another)
 	std::cout << "(Brain) copy constructor called !" << std::endl;
 }
 
+Brain::~Brain()
+{
+	std::cout << "(Brain) destructor called !" << std::endl;
+}
+
 Brain &Brain::operator=(Brain &another)
 {
 	if (this != &another)
@@ -49,7 +54,10 @@ Brain &Brain::operator=(Brain &another)
 
 std::string Brain::getIdea(int index) const
 {
-	if (this -> ideas[index][0] != '\0')
-		return (this -> ideas[index]);
-	return (this -> ideas[this -> lastIdea]);
+	if (index > this->lastIdea - 1)
+		return (this -> ideas[this -> lastIdea - 1]);
+	else if (index < 0)
+		return (this->ideas[0]);
+	else
+		return (this->ideas[index]);
 }
