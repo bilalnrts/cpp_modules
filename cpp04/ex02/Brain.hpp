@@ -13,6 +13,7 @@ class Brain
 		Brain();
 		Brain(std::string newIdea);
 		Brain(Brain &another);
+		~Brain();
 		Brain &operator=(Brain &another);
 		std::string	getIdea(int index) const;
 };
