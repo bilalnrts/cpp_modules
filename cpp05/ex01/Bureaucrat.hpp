@@ -9,28 +9,30 @@ class Form;
 
 class Bureaucrat
 {
-	protected :
-		std::string const	_name; //must be const
-		int					_grade;
+	private :
+		const std::string	name;
+		int					grade;
+
 	public :
+		Bureaucrat();
+		Bureaucrat(std::string name);
+		Bureaucrat(int grade);
 		Bureaucrat(std::string name, int grade);
-		Bureaucrat(Bureaucrat const &another);
-		Bureaucrat &operator=(const Bureaucrat &another);
 		~Bureaucrat();
-		const std::string	getName(void) const;
-		int 				getGrade(void) const;
-		void				increment(void);
-		void				decrement(void);
-		void				signForm(Form &f);
+		Bureaucrat(const Bureaucrat &another);
+		Bureaucrat &operator=(const Bureaucrat &another);
+		std::string getName() const;
+		int			getGrade() const;
+		int			increment();
+		int			decrement();
+		void		signForm(Form &f);
 		class GradeTooHighException : public std::exception
 		{
-			public:
-				const char *what() const throw();
+			const char *what() const throw();
 		};
 		class GradeTooLowException : public std::exception
 		{
-			public:
-				const char *what() const throw();
+			const char *what() const throw();
 		};
 };
 

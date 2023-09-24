@@ -50,7 +50,7 @@ int main()
 	// 	Bureaucrat b("bilal", 1);
 	// 	std::cout << "Bureaucrat name : " << b.getName() << std::endl;
 	// 	std::cout << "Bureaucrat grade : " << b.getGrade() << std::endl;
-	// 	std::cout << b;
+	// 	std::cout << b << std::endl;
 	// }
 	// catch(std::exception& e)
 	// {
