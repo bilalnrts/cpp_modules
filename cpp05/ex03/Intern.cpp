@@ -15,5 +15,6 @@ AForm *Intern::makeForm(std::string nameOfForm, std::string target)
 	while(formNames[++i] != nameOfForm);
 	if ((i <= 2 && i >= 0) && (std::cout << "Intern creates " + nameOfForm << std::endl))
 		return (forms[i]);
+	std::cout << "Intern could not create " + nameOfForm << std::endl;
 	return (NULL);
 }
