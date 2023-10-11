@@ -1,32 +1,21 @@
 #include "whatever.hpp"
 
-int main()
-{
-	//----CASE 1----
-	int val1 = 42;
-	int val2 = 21;
+int main( void ) {
+	int a = 2;
+	int b = 3;
 
-	swap(val1, val2);
-	std::cout << "val1 : " << val1 << std::endl;
-	std::cout << "val2 : " << val2 << std::endl;
-	std::cout << "min : " << min(val1, val2) << std::endl;
-	std::cout << "max : " << max(val1, val2) << std::endl;
-	//----CASE 2----
-	// char val1 = 'a';
-	// char val2 = 'z';
+	swap( a, b );
+	std::cout << "a = " << a << ", b = " << b << std::endl;
+	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
 
-	// swap(val1, val2);
-	// std::cout << "val1 : " << val1 << std::endl;
-	// std::cout << "val2 : " << val2 << std::endl;
-	// std::cout << "min : " << min(val1, val2) << std::endl;
-	// std::cout << "max : " << max(val1, val2) << std::endl;
-	//----CASE 3----
-	// std::string val1 = "String";
-	// std::string val2 = "Char array";
+	std::string c = "chaine1";
+	std::string d = "chaine2";
 
-	// swap(val1, val2);
-	// std::cout << "val1 : " << val1 << std::endl;
-	// std::cout << "val2 : " << val2 << std::endl;
-	// std::cout << "min : " << min(val1, val2) << std::endl;
-	// std::cout << "max : " << max(val1, val2) << std::endl;
+	swap(c, d);
+	std::cout << "c = " << c << ", d = " << d << std::endl;
+	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+
+	return 0;
 }
