@@ -23,6 +23,17 @@ void    Span::addNumber(int n)
         throw std::exception();
 }
 
+void    Span::addNumber(std::string numbers)
+{
+    int num;
+    std::stringstream ss(numbers);
+
+    while (ss >> num)
+    {
+        addNumber(num);
+    }
+}
+
 int     Span::shortestSpan() const
 {
     std::vector<int>    tmp;

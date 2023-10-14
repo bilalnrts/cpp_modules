@@ -2,6 +2,7 @@
 #define SPAN_HPP
 
 #include <iostream>
+#include <sstream>
 #include <vector>
 
 class Span
@@ -16,9 +17,9 @@ class Span
 		Span(const Span &another);
 		Span	&operator=(const Span &another);
 		void	addNumber(int n);
+		void	addNumber(std::string numbers);
 		int		shortestSpan() const;
 		int		longestSpan() const;
-
 };
 
 #endif
