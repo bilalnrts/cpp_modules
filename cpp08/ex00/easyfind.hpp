@@ -2,7 +2,7 @@
 #define EASYFIND_HPP
 
 #include <iostream>
-#include <algorithm>
+#include <vector>
 
 template <typename T>
 int	easyfind(T &a, int b)
