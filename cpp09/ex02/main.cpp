@@ -6,7 +6,7 @@ void	print_container(std::string const &msg, const T &c)
 	typedef typename T::const_iterator iterator;
 	iterator it = c.begin();
 	iterator ite = c.end();
-	std::cout << msg << std::endl;
+	std::cout << msg;
 
 	while (it != ite) {
 		std::cout << *it << " ";
@@ -21,7 +21,7 @@ double bench_container(T &c)
 	std::clock_t start = std::clock();
 	PmergeMe::process(c);
 	clock_t end = std::clock();
-	double elapsed = 1000000.0 * (end - start) / CLOCKS_PER_SEC;
+	double elapsed = static_cast<double>(end - start) / CLOCKS_PER_SEC * 1000;
 	return (elapsed);
 }
 
@@ -48,12 +48,12 @@ int main(int ac, char **av)
 			}
 		}
 
-		print_container("Before :", v);
+		print_container("Before : ", v);
 
 		double v_time = bench_container(v);
 		double d_time = bench_container(d);
 
-		print_container("After :", v);
+		print_container("After : ", v);
 
 		std::cout	<< "Time to process a range of "
 					<< v.size()
