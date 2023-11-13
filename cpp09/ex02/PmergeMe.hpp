@@ -85,9 +85,11 @@ class PmergeMe
 			{
 				int key = c[i];
 				int j = i - 1;
-				for (; j >= start && c[j] > key; --j)
+				while (key < c[j] && j >= start) {
 					c[j + 1] = c[j];
-				c[j + 1] = key;
+					c[j] = key;
+					j--;
+				}
 			}
 		}
 
